@@ -6,7 +6,7 @@
 /*   By: mohdahma <mohdahma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:04:35 by mohdahma          #+#    #+#             */
-/*   Updated: 2025/01/24 15:18:17 by mohdahma         ###   ########.fr       */
+/*   Updated: 2025/01/30 11:35:42 by mohdahma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct a_data
 	int		e_x;
 	int		length;
 	int		nb_lines;
-}t_data;
+}				t_data;
 
 typedef struct s_game
 {
@@ -41,16 +41,16 @@ typedef struct s_game
 	void	*img;
 	int		x;
 	int		y;
-	int		nb_m;
+	int		nb_move;
 	int		nc;
-	char	**s;
+	char	**cont;
 	void	*img_p1;
 	void	*img_p2;
 	void	*img_p3;
 	void	*img_p4;
 	void	*img_p5;
 
-}t_game;
+}				t_game;
 
 void	ft_alloc_map2(t_game *game, char **map);
 void	save_position(t_game *game, char **map);
@@ -73,9 +73,9 @@ void	func_move(int keycode, int x, int y, t_game *game);
 char	*ft_itoa(int n);
 int		collec_check(t_game *game);
 void	path_is_valid(char	**map, int status);
-int		nb_collec(char **map);
+int		nb_collec(char **map, t_data *data);
 void	cheaking_path(t_data *data, int y, int x, int i);
-char	**ft_free(char **s);
+void	ft_free(char **s);
 void	check_extension(char *av, char *ext);
 int		keyhook(int keycode, t_game *game);
 void	ft_free2(t_data *data);

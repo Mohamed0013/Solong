@@ -6,7 +6,7 @@
 /*   By: mohdahma <mohdahma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:25:46 by mohdahma          #+#    #+#             */
-/*   Updated: 2025/01/24 18:31:17 by mohdahma         ###   ########.fr       */
+/*   Updated: 2025/01/30 11:35:25 by mohdahma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,16 @@ int	main(int ac, char **av)
 
 	if (ac == 2)
 	{
-	
 		game_file = open(av[1], O_RDONLY);
 		if (!game_file)
-			perror_fct ("arguments not valid\n");
+			perror_fct("arguments not valid\n");
 		check_extension(av[1], ".ber");
 		map = reading_map(game_file);
 		cheaking_map(map);
 		path_is_valid(map, 0);
 		path_is_valid(map, 1);
 		rendring_game(map);
-		ft_free (map);
+		ft_free(map);
 	}
 	else
 		perror_fct ("arguments not valid\n");

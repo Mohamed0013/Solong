@@ -3,7 +3,7 @@ NAME = so_long
 SRCDIR = libft
 
 SRCS =  so_long.c  ft_check_map.c  ft_free.c ft_init_map.c \
-        ft_position.c   ft_render_map.c \
+        ft_rendergame.c   ft_render_map.c \
 		perror_fct.c \
     	get_next_line.c ft_utils.c \
         

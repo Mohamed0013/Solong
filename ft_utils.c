@@ -6,13 +6,13 @@
 /*   By: mohdahma <mohdahma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:04:43 by mohdahma          #+#    #+#             */
-/*   Updated: 2025/01/24 15:42:50 by mohdahma         ###   ########.fr       */
+/*   Updated: 2025/01/28 16:33:56 by mohdahma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	nb_collec(char **map)
+int	nb_collec(char **map, t_data *data)
 {
 	int	i;
 	int	j;
@@ -31,6 +31,7 @@ int	nb_collec(char **map)
 		}
 		i++;
 	}
+	data->nb_lines = i;
 	return (count);
 }
 
@@ -39,12 +40,12 @@ void	ft_free2(t_data *data)
 	int		i;
 
 	i = 0;
-	while (data->p[i]) // Free each row in the 2D map
+	while (data->p[i])
 	{
 		free(data->p[i]);
 		i++;
 	}
-	free(data->p); // Free the array of pointers
+	free(data->p);
 }
 
 int	func_hook(void)

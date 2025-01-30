@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                   :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smerrakc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mohdahma <mohdahma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/07 20:10:54 by smerrakc          #+#    #+#             */
-/*   Updated: 2023/01/07 20:11:13 by smerrakc         ###   ########.fr       */
+/*   Created: 2025/01/30 10:18:35 by mohdahma          #+#    #+#             */
+/*   Updated: 2025/01/30 10:28:47 by mohdahma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,13 @@ char	*ft_getfilecontent(int fd)
 	ssize_t	n;
 
 	s = NULL;
+	n = 1;
 	buffer = malloc(5 * sizeof(char) + 1);
 	if (!buffer)
 		return (NULL);
-	while ((n = read(fd, buffer, 5)))
+	while (n > 0)
 	{
+		n = read(fd, buffer, 5);
 		if (n <= 0)
 			break ;
 		buffer[n] = '\0';

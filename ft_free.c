@@ -6,13 +6,13 @@
 /*   By: mohdahma <mohdahma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:05:17 by mohdahma          #+#    #+#             */
-/*   Updated: 2025/01/23 13:05:18 by mohdahma         ###   ########.fr       */
+/*   Updated: 2025/01/29 12:37:33 by mohdahma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char	**ft_free(char **s)
+void	ft_free(char **s)
 {
 	int		i;
 
@@ -23,5 +23,4 @@ char	**ft_free(char **s)
 		i++;
 	}
 	free (s);
-	return (NULL);
 }
