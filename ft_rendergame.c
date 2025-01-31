@@ -6,31 +6,31 @@
 /*   By: mohdahma <mohdahma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:04:59 by mohdahma          #+#    #+#             */
-/*   Updated: 2025/01/30 11:50:20 by mohdahma         ###   ########.fr       */
+/*   Updated: 2025/01/30 15:51:17 by mohdahma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void apply_transparency(void *img, int width, int height)
-{
-    int bpp, size_line, endian;
-    char *data = mlx_get_data_addr(img, &bpp, &size_line, &endian);
-    int x, y;
-    int color;
+// void apply_transparency(void *img, int width, int height)
+// {
+//     int bpp, size_line, endian;
+//     char *data = mlx_get_data_addr(img, &bpp, &size_line, &endian);
+//     int x, y;
+//     int color;
 
-    for (y = 0; y < height; y++)
-    {
-        for (x = 0; x < width; x++)
-        {
-            int index = (y * size_line) + (x * (bpp / 8));
-            color = *(int *)(data + index);
+//     for (y = 0; y < height; y++)
+//     {
+//         for (x = 0; x < width; x++)
+//         {
+//             int index = (y * size_line) + (x * (bpp / 8));
+//             color = *(int *)(data + index);
 
-            if (color == 0x000000) // If black
-    			*(int *)(data + index) = 0xFF000000; // Make it transparent
-        }
-    }
-}
+//             if (color == 0x000000) // If black
+//     			*(int *)(data + index) = 0xFF000000; // Make it transparent
+//         }
+//     }
+// }
 
 void	ft_alloc_map2(t_game *game, char **map)
 {
@@ -86,7 +86,7 @@ void	mlx_path_image(t_game *game)
 	game->img_p3 = mlx_xpm_file_to_image(game->mlx,
 			"./image/player.xpm", &x, &y);
 	check_xpm(game->img_p3);
-	apply_transparency(game->img_p3, x, y);
+	// apply_transparency(game->img_p3, x, y);
 	game->img_p4 = mlx_xpm_file_to_image(game->mlx,
 			"./image/collectif.xpm", &x, &y);
 	check_xpm(game->img_p4);
@@ -108,9 +108,12 @@ void	put_to_window(t_game *game, char **map, int x, int y)
 			if (map[y][x] == '0')
 				mlx_put_image_to_window (game->mlx, game->mlx_win, game->img_p2,
 					x * 50, y * 50);
-			if (map[y][x] == 'P')
+			if (map[y][x] == 'P'){
+				mlx_put_image_to_window (game->mlx, game->mlx_win, game->img_p2,
+					x * 50, y * 50);
 				mlx_put_image_to_window (game->mlx, game->mlx_win, game->img_p3,
 					x * 50, y * 50);
+			}
 			if (map[y][x] == 'C')
 				mlx_put_image_to_window (game->mlx, game->mlx_win, game->img_p4,
 					x * 50, y * 50);
