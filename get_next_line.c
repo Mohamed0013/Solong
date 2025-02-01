@@ -6,7 +6,7 @@
 /*   By: mohdahma <mohdahma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 10:18:35 by mohdahma          #+#    #+#             */
-/*   Updated: 2025/01/30 10:28:47 by mohdahma         ###   ########.fr       */
+/*   Updated: 2025/01/31 18:18:04 by mohdahma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_is_newline(char *s)
 
 	i = 0;
 	if (s[0] == '\n')
-		perror_fct("error; newline in map\n");
+		perror_fct("error; newline in beggining of map\n");
 	while (s[i])
 	{
 		if (s[i] == '\n')
@@ -29,7 +29,7 @@ void	ft_is_newline(char *s)
 		i++;
 	}
 	if (s[i - 1] == '\n')
-		perror_fct ("error; map invalid");
+		perror_fct ("error; newline in the end of map\n");
 }
 
 char	*ft_getfilecontent(int fd)

@@ -13,8 +13,7 @@ OBJS = ${SRCS:.c=.o}
 OBJS2 = ${LIBFTSRCS:.c=.o}
 CC = cc
 RM = rm -f
-CFLAGS = -Wall -Wextra -Werror -g3
-
+CFLAGS = -Wall -Wextra -Werror
 
 all: ${NAME}
 

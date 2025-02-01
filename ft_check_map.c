@@ -6,7 +6,7 @@
 /*   By: mohdahma <mohdahma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:05:23 by mohdahma          #+#    #+#             */
-/*   Updated: 2025/01/23 14:03:33 by mohdahma         ###   ########.fr       */
+/*   Updated: 2025/01/31 18:33:15 by mohdahma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	map_caracter(char **map, char c)
 			if (map[i][j] == c)
 				count++;
 			if (!ft_strchr("01ECP", map[i][j]))
-				perror_fct("error: Bad caracter found \n");
+				perror_fct("error: Check the caracters in map\n");
 			j++;
 		}
 		i++;
@@ -57,7 +57,7 @@ void	ft_check_walls2(char **map)
 
 	i = 1;
 	j = ft_strlen(map[i]) - 1;
-	while (map[i] != NULL)
+	while (map[i])
 	{
 		if (map[i][0] != '1' || map[i][j] != '1')
 			perror_fct ("Error: should be a wall here \n");
@@ -85,7 +85,7 @@ void	cheaking_map(char **map)
 	}
 	ft_check_walls(map);
 	if (map_caracter(map, 'C') < 1 || map_caracter(map, 'P') != 1)
-		perror_fct("error : Caracters founds not valid \n");
+		perror_fct("error : Ivalid Caracters\n");
 	if (map_caracter(map, 'E') != 1)
-		perror_fct("error : caracter EXIT  not valid\n" );
+		perror_fct("error : caracter \"EXIT\" not valid\n" );
 }

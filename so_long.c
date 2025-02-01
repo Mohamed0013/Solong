@@ -6,7 +6,7 @@
 /*   By: mohdahma <mohdahma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:25:46 by mohdahma          #+#    #+#             */
-/*   Updated: 2025/01/30 11:35:25 by mohdahma         ###   ########.fr       */
+/*   Updated: 2025/01/31 17:53:43 by mohdahma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ void	check_extension(char *str, char *ext)
 	i = 0;
 	while (str[j] && ext[i])
 		if (str[j++] != ext[i++])
-			perror_fct("error :False extention !\n");
+			perror_fct("error :your map extention is not valid\n");
 	j = 0;
 	point = 0;
 	while (str[j++])
 		if (str[j] == '.')
 			point++;
 	if (point > 1)
-		perror_fct("error :check extention !\n");
+		perror_fct("error :check the extention !\n");
 }
 
 int	main(int ac, char **av)

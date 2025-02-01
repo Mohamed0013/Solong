@@ -6,7 +6,7 @@
 /*   By: mohdahma <mohdahma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 10:17:55 by mohdahma          #+#    #+#             */
-/*   Updated: 2025/01/30 10:17:56 by mohdahma         ###   ########.fr       */
+/*   Updated: 2025/01/31 18:19:58 by mohdahma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
 		return ;
-	while (*s != '\0')
+	while (*s)
 	{
 		write(fd, s, 1);
 		s++;

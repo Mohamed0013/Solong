@@ -6,7 +6,7 @@
 /*   By: mohdahma <mohdahma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:05:09 by mohdahma          #+#    #+#             */
-/*   Updated: 2025/01/30 11:01:18 by mohdahma         ###   ########.fr       */
+/*   Updated: 2025/02/01 12:23:52 by mohdahma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	path_is_valid(char **map, int status)
 	data.nb_c = nb_collec(map, &data);
 	data.e_x = 1;
 	data.length = ft_strlen(map[0]);
-	if (data.length >= 327 || data.nb_lines >= 327)
+	if (data.length > 328 || data.nb_lines > 326)
 		perror_fct("Error: Map very large\n");
 	save_pos(&data, map);
 	alloc_map(&data, map);

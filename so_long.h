@@ -6,7 +6,7 @@
 /*   By: mohdahma <mohdahma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:04:35 by mohdahma          #+#    #+#             */
-/*   Updated: 2025/01/30 11:35:42 by mohdahma         ###   ########.fr       */
+/*   Updated: 2025/01/31 18:36:28 by mohdahma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@
 # include <string.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include <stddef.h>
 # include <ctype.h>
 # include <unistd.h>
-# include <fcntl.h>
 # include <fcntl.h>
 # include <mlx.h>
 
